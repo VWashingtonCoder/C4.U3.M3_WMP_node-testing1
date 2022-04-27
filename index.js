@@ -20,17 +20,19 @@ function trimPropertiesMutation(obj) {
   return obj;
 }
 
-/**
- * [Exercise 3] findLargestInteger finds the largest integer in an array of objects { integer: 1 }
- * @param {object[]} integers - an array of objects
- * @returns {number} - the largest integer
- *
- * EXAMPLE
- * findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }]) // returns 3
- */
+// [Exercise 3]_findLargestInteger
 function findLargestInteger(integers) {
-  // ✨ implement
+  let numArr = [];
+  
+  for(let i = 0; i < integers.length; i++){
+    numArr.push(integers[i].integer)  
+  }
+  
+  let largest = Math.max(...numArr)
+
+  return largest
 }
+
 
 class Counter {
   /**
