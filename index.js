@@ -1,13 +1,17 @@
-/**
- * [Exercise 1] trimProperties copies an object trimming its properties
- * @param {object} obj - an object with properties that are strings
- * @returns {object} - a copy of the object with strings trimmed
- *
- * EXAMPLE
- * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
- */
+// Test Data
+const stringObj = {
+  name: ' Ace', 
+  role: 'Vice-Captain ', 
+  crew: ' WhiteBeard Pirates '
+}
+
+// [Exercise 1]
 function trimProperties(obj) {
-  // ✨ implement
+  Object.keys(obj).forEach(key => {
+    obj[key] = obj[key].trim();
+  })
+
+  return obj
 }
 
 /**
