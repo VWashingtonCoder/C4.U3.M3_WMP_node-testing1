@@ -5,23 +5,20 @@ const stringObj = {
   crew: ' WhiteBeard Pirates '
 }
 
-// [Exercise 1]
+// [Exercise 1]_trimProperties
 function trimProperties(obj) {
-  Object.keys(obj).forEach(key => {
-    obj[key] = obj[key].trim();
+  let newObj = {...obj}
+  Object.keys(newObj).forEach(key => {
+    newObj[key] = newObj[key].trim();
   })
 
-  return obj
+  return newObj
 }
 
-/**
- * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
- * @param {object} obj - an object with properties that are strings
- * @returns {object} - the same object with strings trimmed
- *
- * EXAMPLE
- * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
- */
+console.log(trimProperties(stringObj))
+console.log(stringObj)
+
+// [Exercise 2]_trimPropertiesMutation
 function trimPropertiesMutation(obj) {
   // ✨ implement
 }

@@ -8,7 +8,13 @@ describe('[Exercise 1] trimProperties', () => {
     const actual = utils.trimProperties(input)
     expect(actual).toEqual(expected)
   })
-  // test('[2] returns a copy, leaving the original object intact', () => {})
+  test('[2] returns a copy, leaving the original object intact', () => {
+    const stringObj = {name: ' Ace', role: 'Vice-Captain ', crew: ' WhiteBeard Pirates '};
+    const expected = {name: 'Ace', role: 'Vice-Captain', crew: 'WhiteBeard Pirates'};
+    const actual = utils.trimProperties(stringObj);
+    expect(actual).toEqual(expected);
+    expect(stringObj).toEqual(stringObj);
+  })
 })
 
 // describe('[Exercise 2] trimPropertiesMutation', () => {
