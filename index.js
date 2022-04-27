@@ -54,65 +54,33 @@ class Counter {
 class Seasons {
   
   constructor() {
-    // ✨ initialize whatever properties are needed
     this.season = 'spring'
     this.seasonNum = 1
   }
 
-  /**
-   
-   */
   next() {
-    // ✨ implement
     if(this.seasonNum === 1){
-      this.seasonNum += 1
-      this.season = 'summer'
+      this.seasonNum += 1;
+      this.season = 'summer';
     }else if(this.seasonNum === 2){
-      this.seasonNum += 1
-      this.season = 'fall'
+      this.seasonNum += 1;
+      this.season = 'fall';
     }else if(this.seasonNum === 3){
-      this.seasonNum += 1
-      this.season = 'winter'
+      this.seasonNum += 1;
+      this.season = 'winter';
     }else if(this.seasonNum === 4){
-      this.seasonNum = 1
-      this.season = 'spring'
+      this.seasonNum = 1;
+      this.season = 'spring';
     }     
-
-    // switch(this.seasonNum){
-    //   case 1:
-    //      
-    //   case 2:
-    //     
-    //   case 3:
-    //     this.season = 
-    //   case 4:
-    //     
-    // }
-
   }
 }
 
-let seasons = new Seasons()
-console.log(seasons)
-seasons.next()
-console.log(seasons)
-seasons.next()
-console.log(seasons)
-seasons.next()
-console.log(seasons)
-seasons.next()
-console.log(seasons)
-
 class Car {
-  /**
-   * [Exercise 6A] Car creates a car object
-   * @param {string} name - the name of the car
-   * @param {number} tankSize - capacity of the gas tank in gallons
-   * @param {number} mpg - miles the car can drive per gallon of gas
-   */
   constructor(name, tankSize, mpg) {
-    this.odometer = 0 // car initilizes with zero miles
-    this.tank = tankSize // car initiazes full of gas
+    this.name = name;
+    this.odometer = 0; // car initilizes with zero miles
+    this.tank = tankSize; // car initiazes full of gas
+    this.mpg = mpg;
     // ✨ initialize whatever other properties are needed
   }
 
@@ -148,6 +116,9 @@ class Car {
     // ✨ implement
   }
 }
+
+let focus = new Car('focus', 20, 30)
+console.log(focus)
 
 /**
  * [Exercise 7] Asynchronously resolves whether a number is even

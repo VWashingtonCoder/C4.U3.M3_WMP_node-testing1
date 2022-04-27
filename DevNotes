@@ -41,3 +41,18 @@
    * counter.countDown() // returns 0
    * counter.countDown() // returns 0
    */
+
+/**
+   * [Exercise 5A] Seasons creates a seasons object
+   
+    * [Exercise 5B] Seasons.prototype.next returns the next season
+   * @returns {string} - the next season starting with "summer"
+   *
+   * EXAMPLE
+   * const seasons = new Seasons()
+   * seasons.next() // returns "summer"
+   * seasons.next() // returns "fall"
+   * seasons.next() // returns "winter"
+   * seasons.next() // returns "spring"
+   * seasons.next() // returns "summer"
+*/
