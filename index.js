@@ -51,43 +51,57 @@ class Counter {
   }
 }
 
-let counter = new Counter(3)
-console.log(counter)
-counter.countDown() // C: 3, T: 1
-console.log(counter)
-counter.countDown() // C: 2, T: 2
-console.log(counter)
-counter.countDown() // C: 1, T: 3
-console.log(counter)
-counter.countDown() // C: 0, T: 4
-console.log(counter)
-counter.countDown() // C: 0, T: 5
-console.log(counter)
-
 class Seasons {
-  /**
-   * [Exercise 5A] Seasons creates a seasons object
-   */
+  
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.season = 'spring'
+    this.seasonNum = 1
   }
 
   /**
-   * [Exercise 5B] Seasons.prototype.next returns the next season
-   * @returns {string} - the next season starting with "summer"
-   *
-   * EXAMPLE
-   * const seasons = new Seasons()
-   * seasons.next() // returns "summer"
-   * seasons.next() // returns "fall"
-   * seasons.next() // returns "winter"
-   * seasons.next() // returns "spring"
-   * seasons.next() // returns "summer"
+   
    */
   next() {
     // ✨ implement
+    if(this.seasonNum === 1){
+      this.seasonNum += 1
+      this.season = 'summer'
+    }else if(this.seasonNum === 2){
+      this.seasonNum += 1
+      this.season = 'fall'
+    }else if(this.seasonNum === 3){
+      this.seasonNum += 1
+      this.season = 'winter'
+    }else if(this.seasonNum === 4){
+      this.seasonNum = 1
+      this.season = 'spring'
+    }     
+
+    // switch(this.seasonNum){
+    //   case 1:
+    //      
+    //   case 2:
+    //     
+    //   case 3:
+    //     this.season = 
+    //   case 4:
+    //     
+    // }
+
   }
 }
+
+let seasons = new Seasons()
+console.log(seasons)
+seasons.next()
+console.log(seasons)
+seasons.next()
+console.log(seasons)
+seasons.next()
+console.log(seasons)
+seasons.next()
+console.log(seasons)
 
 class Car {
   /**
