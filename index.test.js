@@ -9,18 +9,32 @@ describe('[Exercise 1] trimProperties', () => {
     expect(actual).toEqual(expected)
   })
   test('[2] returns a copy, leaving the original object intact', () => {
-    const stringObj = {name: ' Ace', role: 'Vice-Captain ', crew: ' WhiteBeard Pirates '};
+    const input = {name: ' Ace', role: 'Vice-Captain ', crew: ' WhiteBeard Pirates '};
     const expected = {name: 'Ace', role: 'Vice-Captain', crew: 'WhiteBeard Pirates'};
-    const actual = utils.trimProperties(stringObj);
+    const actual = utils.trimProperties(input);
     expect(actual).toEqual(expected);
-    expect(stringObj).toEqual(stringObj);
+    expect(input).not.toEqual(actual);
   })
 })
 
-// describe('[Exercise 2] trimPropertiesMutation', () => {
-//   // test('[3] returns an object with the properties trimmed', () => {})
-//   // test('[4] the object returned is the exact same one we passed in', () => {})
-// })
+describe('[Exercise 2] trimPropertiesMutation', () => {
+  test('[3] returns an object with the properties trimmed', () => {
+    const input = {name: ' Ace', role: 'Vice-Captain ', crew: ' WhiteBeard Pirates '};
+    const expected = {name: 'Ace', role: 'Vice-Captain', crew: 'WhiteBeard Pirates'};
+    const actual = utils.trimPropertiesMutation(input);
+
+    expect(actual).toEqual(expected);
+  })
+  
+  test('[4] the object returned is the exact same one we passed in', () => {
+    const input = {name: ' Ace', role: 'Vice-Captain ', crew: ' WhiteBeard Pirates '};
+    const expected = {name: 'Ace', role: 'Vice-Captain', crew: 'WhiteBeard Pirates'};
+    const actual = utils.trimPropertiesMutation(input);
+
+    expect(actual).toEqual(expected);
+    expect(input).toEqual(actual);
+  })
+})
 
 // describe('[Exercise 3] findLargestInteger', () => {
 //   // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})

@@ -1,9 +1,5 @@
 // Test Data
-const stringObj = {
-  name: ' Ace', 
-  role: 'Vice-Captain ', 
-  crew: ' WhiteBeard Pirates '
-}
+
 
 // [Exercise 1]_trimProperties
 function trimProperties(obj) {
@@ -15,12 +11,13 @@ function trimProperties(obj) {
   return newObj
 }
 
-console.log(trimProperties(stringObj))
-console.log(stringObj)
-
 // [Exercise 2]_trimPropertiesMutation
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  Object.keys(obj).forEach(key => {
+    obj[key] = obj[key].trim();
+  })
+
+  return obj;
 }
 
 /**
