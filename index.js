@@ -35,30 +35,34 @@ function findLargestInteger(integers) {
 
 
 class Counter {
-  /**
-   * [Exercise 4A] Counter creates a counter
-   * @param {number} initialNumber - the initial state of the count
-   */
+  
   constructor(initialNumber) {
-    // ✨ initialize whatever properties are needed
+    this.count = initialNumber
+    this.turns = 0;
   }
 
-  /**
-   * [Exercise 4B] Counter.prototype.countDown counts down to zero
-   * @returns {number} - the next count, does not go below zero
-   *
-   * EXAMPLE
-   * const counter = new Counter(3)
-   * counter.countDown() // returns 3
-   * counter.countDown() // returns 2
-   * counter.countDown() // returns 1
-   * counter.countDown() // returns 0
-   * counter.countDown() // returns 0
-   */
   countDown() {
-    // ✨ implement
+    if(this.turns === 0 || this.count === 0) {
+      this.turns += 1;
+    } else if(this.turns !== 0) {
+      this.count -= 1;
+      this.turns += 1;
+    }
   }
 }
+
+let counter = new Counter(3)
+console.log(counter)
+counter.countDown() // C: 3, T: 1
+console.log(counter)
+counter.countDown() // C: 2, T: 2
+console.log(counter)
+counter.countDown() // C: 1, T: 3
+console.log(counter)
+counter.countDown() // C: 0, T: 4
+console.log(counter)
+counter.countDown() // C: 0, T: 5
+console.log(counter)
 
 class Seasons {
   /**
