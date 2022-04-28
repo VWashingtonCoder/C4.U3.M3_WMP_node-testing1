@@ -80,45 +80,42 @@ class Car {
     this.name = name;
     this.odometer = 0; // car initilizes with zero miles
     this.tank = tankSize; // car initiazes full of gas
+    this.initialTank = tankSize
     this.mpg = mpg;
+    
     // ✨ initialize whatever other properties are needed
   }
 
-  /**
-   * [Exercise 6B] Car.prototype.drive adds miles to the odometer and consumes fuel according to mpg
-   * @param {string} distance - the distance we want the car to drive
-   * @returns {number} - the updated odometer value
-   *
-   * EXAMPLE
-   * const focus = new Car('focus', 20, 30)
-   * focus.drive(100) // returns 100
-   * focus.drive(100) // returns 200
-   * focus.drive(100) // returns 300
-   * focus.drive(200) // returns 500
-   * focus.drive(200) // returns 600 (ran out of gas after 100 miles)
-   */
   drive(distance) {
     // ✨ implement
+    const totalMiles = this.tank * this.mpg;
+    const remainingMiles = totalMiles - distance;
+    const fuelRemaining = remainingMiles/this.mpg;
+    
+    if(distance > totalMiles){
+      this.odometer += distance + remainingMiles;
+      this.tank = 0;
+      return `${this.odometer} (ran out of gas after ${distance + remainingMiles} miles)`;
+    } else {
+      this.odometer += distance;
+      this.tank = fuelRemaining;
+      return this.odometer
+    }
   }
 
-  /**
-   * [Exercise 6C] Adds gallons to the tank
-   * @param {number} gallons - the gallons of fuel we want to put in the tank
-   * @returns {number} - the miles that can be driven after refueling
-   *
-   * EXAMPLE
-   * const focus = new Car('focus', 20, 30)
-   * focus.drive(600) // returns 600
-   * focus.drive(1) // returns 600 (no distance driven as tank is empty)
-   * focus.refuel(99) // returns 600 (tank only holds 20)
-   */
   refuel(gallons) {
     // ✨ implement
+    if(this.tank + gallons <= this.initialTank){
+      this.tank += gallons;
+      return this.odometer;
+    } else if(this.tank + gallons > this.initialTank ){
+      const overflowGallons  = (this.tank + gallons) - this.initialTank
+      this.tank += gallons - overflowGallons
+      return `${this.odometer} (tank only holds ${this.initialTank} gallons)`
+    }
   }
 }
 
-let focus = new Car('focus', 20, 30)
-console.log(focus)
 
 /**
  * [Exercise 7] Asynchronously resolves whether a number is even
